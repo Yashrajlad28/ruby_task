@@ -1,0 +1,36 @@
+git commands: follow these
+
+Clonning empty repo, and pushing local branches to remote
+
+1. git clone <url> : if you clone empty repository then make atlease one
+ 		     one commit in main, before branching, otherwise branches
+		     will not be visible properly. While cloning do not use 
+		     https, USE SSH!
+
+2. git push -u origin <local-branch-name> : -u means upstream, alternatively
+   git push --set-upstream origin <local-branch-name> can also be used.
+
+3. Then switch to the desired branch and start commiting
+
+4. git push origin <branch-name>
+   ex: git push origin local_development
+
+
+Cloning non-empty repo with existing branches and commits
+
+1. git clone <url> choose ssh url
+
+2. git fetch origin: It retrieves all new data (commits and objects)
+                     from the specified remote, in this case, "origin".
+
+       OR
+
+2. git checkout <remote-branch-name>: Switch to a specific branch locally.
+                                      To work on a specific remote branch,
+                                      simply check it out. Git will automatically
+                                      create a local branch that tracks the remote one. 
+
+The above commands (no 2.) will download all the files present in respective
+branches and also track them for future. Structure of local and remote repo
+will be identical
+
