@@ -144,3 +144,58 @@ end
 sbj = Science.new
 puts sbj.extract_samples
 
+puts "----------------------------------------------------"
+puts
+
+puts "Module 9"
+
+print "Enter dividend: "
+dividend = gets.chomp.to_i
+print "Enter divisor: "
+divisor = gets.chomp.to_i
+
+puts
+
+=begin
+Exception Handling keywords
+1. begin (try)
+2. rescue <name of exception> (catch)
+3. else: The else block executes only if no exception is raised in the begin block.
+4. ensure (finally): This block always executes, regardless of occurence of exception
+5. retry: Used only within a rescue block, retry restarts the execution of the begin 
+            block from the beginning
+=end
+
+begin
+    quotient = dividend / divisor
+
+rescue ZeroDivisionError => e
+    puts e.message
+
+rescue StandardError => e
+    puts "Another standard error: #{e.message}"
+
+else
+    puts "Result is #{quotient}"
+
+end
+
+puts "----------------------------------------------------"
+puts
+
+puts "Module 10"
+
+# modes in file handling: r, w, a, r+, w+, a+
+
+read_file_obj = File.open("task.txt", "r")
+puts read_file_obj.readlines
+
+read_file_obj.close
+
+write_file_obj = File.new("first.txt", "w")
+write_file_obj.syswrite("File Handling in Ruby!")
+write_file_obj.close
+
+puts "----------------------------------------------------"
+puts
+
